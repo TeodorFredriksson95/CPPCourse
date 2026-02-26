@@ -53,3 +53,8 @@ Debug/
 Release/
 x64/
 x86/
+
+# CLion/IDE files
+*.iml
+.idea/
+cmake-build-*/

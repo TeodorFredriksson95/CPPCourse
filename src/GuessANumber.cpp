@@ -1,4 +1,4 @@
-#include "GuessANumber.h"
+#include "../include/GuessANumber.h"
 #include <iostream>
 #include <string>
 

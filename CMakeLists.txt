@@ -1,15 +1,18 @@
-cmake_minimum_required(VERSION 4.1)
+cmake_minimum_required(VERSION 3.16)
 project(CPPCourse)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
-include_directories(.)
-include_directories(Test)
+# Include headers
+include_directories(include)
 
-add_executable(CPPCourse
-        Test/Test.cpp
-        Test/Test.h
-        CPPCourse.cpp
-        GuessANumber.cpp
-        GuessANumber.h
-        resource.h)
+# Collect all source files
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+list(APPEND SOURCES "${PROJECT_SOURCE_DIR}/main.cpp")
+
+
+# Build the executable
+add_executable(CPPCourse ${SOURCES}
+        src/menu/menu.cpp
+        include/menu/menu.h)
+
