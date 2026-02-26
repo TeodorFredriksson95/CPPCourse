@@ -125,10 +125,12 @@
   <ItemGroup>
     <ClCompile Include="CPPCourse.cpp" />
     <ClCompile Include="GuessANumber.cpp" />
+    <ClCompile Include="Test\Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GuessANumber.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Test\Test.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CPPCourse.rc" />

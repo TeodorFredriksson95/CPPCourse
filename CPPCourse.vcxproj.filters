@@ -24,6 +24,9 @@
     <ClCompile Include="GuessANumber.cpp">
       <Filter>Source Files\Week1</Filter>
     </ClCompile>
+    <ClCompile Include="Test\Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -31,6 +34,9 @@
     </ClInclude>
     <ClInclude Include="GuessANumber.h">
       <Filter>Source Files\Week1</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\Test.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
