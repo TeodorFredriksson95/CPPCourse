@@ -67,6 +67,32 @@ public:
         }
         // REMEMBER: USING 1D-GRID WITH WRAP AROUNDS. The "max height" of a grid system, ie the last row,
         // is going to be displayed as the "last printed log". Remember this when you get confused about cardinal directions.
+
+        return y * maxWidth + x; // follows the formula row * columns + c to return the index of a 2D grid in 1D memory.
+        // Example: Let's say height is = 4, width = 10 (representing 10 columns, 4 rows)
+        // We would have a grid that looks something like this;
+
+        // 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,
+        // 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9,
+        // 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9,
+        // 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9,
+
+        // The dots are just to keep proper spacing between each intended index. Imagine 0.4 = 4 ( row 1, column 5), and 2.2 = 22 (row 3, column 3).
+
+        // Now let's say we're at row 3, column 5 (as represented by the index 2.4, and could be equivalent to the value 24).
+        // Now let's compute our x and y values, representing our width and height.
+        // That means Head() returns 24.
+        // x = 24 % 10 = 4
+        // y = 24 / 10 = 2
+        // Given our formula, we get: 2 * 10 + 4 = 24.
+        // Now, let's take into account the fact that we incremented either the x or y value in the direction of which we
+        // are currently traveling towards. Let's say we're traveling in the east direction, which means we have just
+        // incremented our current x value by 1, which represents our prognosed next position.
+
+        // That means our *actual* calculation is going to look like this;
+        // 2 * 10 + 5 = 25.
+        // Using our "grid" above, 2.5 would correlate to the same row as previously, but 1 column ahead, ie column 6.
+
     }
 };
 
