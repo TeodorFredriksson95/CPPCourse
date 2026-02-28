@@ -135,6 +135,7 @@ class SnakeLogic {
             }
         } while (index++ < field.size());
 
+        int deleteme;
         // `blanks` now only contains elements that aren't already occupied by the snakes head or tail.
         // Safe to produce food at a random location within this array of elements, representing grid positions.
 
