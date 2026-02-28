@@ -113,11 +113,11 @@ class SnakeLogic {
         do {
             if (_kbhit()) {
                 switch (getch()) {
-                    case 'a': case 'A': snake.set_face(Snake::WEST);  break;
-                    case 's': case 'S': snake.set_face(Snake::SOUTH); break;
-                    case 'd': case 'D': snake.set_face(Snake::EAST);  break;
-                    case 'w': case 'W': snake.set_face(Snake::NORTH); break;
-                    case 'X': snake.is_alive = 0; break; // Capital 'X' to safeguard against accidental x-character press
+                    case 'a': case 'A': snake.SetDirection(Snake::WEST);  break;
+                    case 's': case 'S': snake.SetDirection(Snake::SOUTH); break;
+                    case 'd': case 'D': snake.SetDirection(Snake::EAST);  break;
+                    case 'w': case 'W': snake.SetDirection(Snake::NORTH); break;
+                    case 'X': snake.isAlive = 0; break; // Capital 'X' to safeguard against accidental x-character press
                     default: break;
                 }
             }
