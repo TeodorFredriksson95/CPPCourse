@@ -46,7 +46,7 @@ public:
         return cells.back();
     }
 
-    int NextHead() {
+    int NextHead() const {
         int x = Head() % maxWidth; // returns the column number
         int y = Head() / maxWidth; // returns the row number
 
@@ -94,6 +94,56 @@ public:
         // Using our "grid" above, 2.5 would correlate to the same row as previously, but 1 column ahead, ie column 6.
 
     }
+};
+
+class SnakeLogic {
+    list<int> field;
+    list<int> blanks;
+
+    Snake snake;
+
+    int score;
+    int foodCell;
+    int maxDelayMs;
+
+    void GetInput() {
+        unsigned int waitedMs = 0;
+        unsigned int inputWaitMs = 20;
+
+        do {
+            if (_kbhit()) {
+                switch (getch()) {
+                    case 'a': case 'A': snake.set_face(Snake::WEST);  break;
+                    case 's': case 'S': snake.set_face(Snake::SOUTH); break;
+                    case 'd': case 'D': snake.set_face(Snake::EAST);  break;
+                    case 'w': case 'W': snake.set_face(Snake::NORTH); break;
+                    case 'X': snake.is_alive = 0; break; // Capital 'X' to safeguard against accidental x-character press
+                    default: break;
+                }
+            }
+            waitedMs += inputWaitMs;
+            Sleep(inputWaitMs);
+        } while (maxDelayMs > waitedMs);
+    }
+
+    void GenerateFood() {
+        blanks.clear();
+        int index = 0;
+        do {
+            if (!snake.HasCell(index)) {
+                blanks.push_back(index);
+            }
+        } while (index++ < field.size());
+
+        // `blanks` now only contains elements that aren't already occupied by the snakes head or tail.
+        // Safe to produce food at a random location within this array of elements, representing grid positions.
+
+        auto it = blanks.begin(); // `auto` used to deduce the type template of the iterator. Basically replaces `list<int>::iterator`
+
+        advance(it, rand() % blanks.size());
+        foodCell = *it;
+    }
+
 };
 
 
