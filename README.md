@@ -34,7 +34,5 @@ To tell the compiler about the existance of the implementation of a function.
 ## 4. If you store a 2D grid in 1D memory, how do you compute the index?
 
 **Answer:**  
-There is a formula for this: `index = r * cols + c;`
-- row = ____________________  
-- column = ____________________  
-- width = ____________________
+There is a formula for this: `index = row * columns + c;`
+
