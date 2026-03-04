@@ -1,10 +1,14 @@
 #include "include/menu/menu.h"
+#include "include/Exercises/Week1/Level0.h"
 #include <iostream>
 #include <list>
 #include <conio.h>
 #include <windows.h>
 #include <algorithm>
 #include <ctime>
+
+#include "Exercises/Week1/Level1.h"
+
 
 using namespace std;
 
@@ -135,7 +139,6 @@ class SnakeLogic {
             }
         } while (index++ < field.size());
 
-        int deleteme;
         // `blanks` now only contains elements that aren't already occupied by the snakes head or tail.
         // Safe to produce food at a random location within this array of elements, representing grid positions.
 
@@ -144,7 +147,6 @@ class SnakeLogic {
         advance(it, rand() % blanks.size());
         foodCell = *it;
     }
-
 };
 
 
@@ -154,41 +156,8 @@ void InitSnakePosition() {
 }
 
 int main() {
-    constexpr int WIDTH = 100;
-    constexpr int HEIGHT = 20;
 
-    for (int i = 0; i < 100; ++i) {
-        grid[i] = i;
-    }
-    int snake[5] = {};
-    // DisplayMainMenu();
-
-    std::cout << std::endl;
-
-    //Print top walls grid
-    for (int i = 0; i < WIDTH; ++i) {
-        std::cout << "=";
-    }
-
-    std::cout << std::endl;
-
-    // Print side walls
-    for (int y = 0; y < HEIGHT; ++y) {
-        for (int x = 0; x < WIDTH - 2; x++) {
-            if (x == 0) {
-                std::cout << "||";
-            } else if (x == WIDTH - 3) {
-                std::cout << "||" << std::endl;
-            } else {
-                std::cout << " ";
-            }
-        }
-    }
-
-    //Print bottom walls grid
-    for (int i = 0; i < WIDTH; ++i) {
-        std::cout << "=";
-    }
-
+    // Week1::Level0();
+    Week1::Level1();
     return 0;
 }

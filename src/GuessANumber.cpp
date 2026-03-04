@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-namespace Week1 {
+namespace WeekUndecided {
 
 
 	void HelloFromOtherNamespace() {

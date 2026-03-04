@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Week1 {
+namespace WeekUndecided {
 
 	void HelloFromOtherNamespace();
 	void GuessANumber();
