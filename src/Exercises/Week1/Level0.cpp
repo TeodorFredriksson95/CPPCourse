@@ -1,4 +1,3 @@
-
 #include "../../../include/Exercises/Week1/Level0.h"
 #include <algorithm>
 #include <codecvt>
@@ -7,7 +6,7 @@
 
 using namespace std;
 
-namespace Week1 {
+namespace Week1::LevelZero {
 #pragma region LEVEL 0
 
     // 1. Print three lines: your name, today’s date, and your favorite game.

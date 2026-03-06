@@ -4,7 +4,10 @@
 
 #ifndef CPPCOURSE_LEVEL1_H
 #define CPPCOURSE_LEVEL1_H
+
 namespace Week1 {
-    void Level1();
+    namespace LevelOne {
+        void Level1();
+    }
 }
 #endif //CPPCOURSE_LEVEL1_H

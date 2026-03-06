@@ -8,6 +8,11 @@
 #include <ctime>
 
 #include "Exercises/Week1/Level1.h"
+#include "Exercises/Week1/Level2.h"
+#include "Exercises/Week1/Level3.h"
+#include "Exercises/Week1/Level4.h"
+#include "Exercises/Week1/Level5.h"
+#include "Exercises/Week1/Level6.h"
 
 
 using namespace std;
@@ -157,7 +162,32 @@ void InitSnakePosition() {
 
 int main() {
 
-    // Week1::Level0();
-    Week1::Level1();
+    // Level 0
+    // Week1::LevelZero::Level0();
+    //
+    // // Level 1
+    // Week1::LevelOne::Level1();
+    //
+    // // Level 2
+    // Week1::LevelTwo::CountUpAndDown();
+    // Week1::LevelTwo::MultiplicationTable();
+    // Week1::LevelTwo::DrawTopBorder();
+    // Week1::LevelTwo::DrawEmptyRectangle();
+    // Week1::LevelTwo::DrawFilledRectangle();
+    //
+    // // Level 3
+    // Week1::LevelThree::RenderGrid(0, 0);
+    // Week1::LevelThree::GetInput();
+
+    // Level 4
+    // Week1::LevelFour::RenderGrid(0,0);
+    // Week1::LevelFour::GetInput();
+
+    // Level 5
+    // Week1::LevelFive::GridGenerator(0,0);
+    // Week1::LevelFive::GetInput();
+
+    // Level 6
+    Week1::LevelSix::RunBasicSnake();
     return 0;
 }

@@ -10,6 +10,8 @@ include_directories(include)
 set(PROJECT_HEADERS
         include/menu/menu.h
         include/Exercises/Week1/Level0.h
+        include/Exercises/Week1/Level1.h
+        include/Exercises/Week1/Level2.h
 )
 set(PROJECT_SOURCES
         main.cpp
@@ -18,6 +20,16 @@ set(PROJECT_SOURCES
         include/Exercises/Week1/Level0.h
         src/Exercises/Week1/Level1.cpp
         include/Exercises/Week1/Level1.h
+        src/Exercises/Week1/Level2.cpp
+        include/Exercises/Week1/Level2.h
+        src/Exercises/Week1/Level3.cpp
+        include/Exercises/Week1/Level3.h
+        src/Exercises/Week1/Level4.cpp
+        include/Exercises/Week1/Level4.h
+        src/Exercises/Week1/Level5.cpp
+        include/Exercises/Week1/Level5.h
+        src/Exercises/Week1/Level6.cpp
+        include/Exercises/Week1/Level6.h
 )
 
 # Build executable
