@@ -1,11 +1,3 @@
-#include "include/menu/menu.h"
-#include "include/Exercises/Week1/Level0.h"
-#include <iostream>
-#include <list>
-#include <conio.h>
-#include <windows.h>
-#include <algorithm>
-#include <ctime>
 
 #include "Exercises/Week1/Level1.h"
 #include "Exercises/Week1/Level2.h"
@@ -14,8 +6,24 @@
 #include "Exercises/Week1/Level5.h"
 #include "Exercises/Week1/Level6.h"
 
+#include "Exercises/Week2/W2_Level1.h"
+#include "Exercises/Week2/W2Level0.h"
+
+
+#include <iostream>
+#include <list>
+#include <conio.h>
+#include <windows.h>
+#include <algorithm>
+
+#include "Exercises/Week2/W2_Level1.h"
+
 
 using namespace std;
+
+enum MyEnum {
+    One, Two, Three, Four, Five, Six, Seven, Eight, Nine
+};
 
 class Snake {
 public:
@@ -101,7 +109,6 @@ public:
         // That means our *actual* calculation is going to look like this;
         // 2 * 10 + 5 = 25.
         // Using our "grid" above, 2.5 would correlate to the same row as previously, but 1 column ahead, ie column 6.
-
     }
 };
 
@@ -122,11 +129,20 @@ class SnakeLogic {
         do {
             if (_kbhit()) {
                 switch (getch()) {
-                    case 'a': case 'A': snake.SetDirection(Snake::WEST);  break;
-                    case 's': case 'S': snake.SetDirection(Snake::SOUTH); break;
-                    case 'd': case 'D': snake.SetDirection(Snake::EAST);  break;
-                    case 'w': case 'W': snake.SetDirection(Snake::NORTH); break;
-                    case 'X': snake.isAlive = 0; break; // Capital 'X' to safeguard against accidental x-character press
+                    case 'a':
+                    case 'A': snake.SetDirection(Snake::WEST);
+                        break;
+                    case 's':
+                    case 'S': snake.SetDirection(Snake::SOUTH);
+                        break;
+                    case 'd':
+                    case 'D': snake.SetDirection(Snake::EAST);
+                        break;
+                    case 'w':
+                    case 'W': snake.SetDirection(Snake::NORTH);
+                        break;
+                    case 'X': snake.isAlive = 0;
+                        break; // Capital 'X' to safeguard against accidental x-character press
                     default: break;
                 }
             }
@@ -147,7 +163,8 @@ class SnakeLogic {
         // `blanks` now only contains elements that aren't already occupied by the snakes head or tail.
         // Safe to produce food at a random location within this array of elements, representing grid positions.
 
-        auto it = blanks.begin(); // `auto` used to deduce the type template of the iterator. Basically replaces `list<int>::iterator`
+        auto it = blanks.begin();
+        // `auto` used to deduce the type template of the iterator. Basically replaces `list<int>::iterator`
 
         advance(it, rand() % blanks.size());
         foodCell = *it;
@@ -161,9 +178,10 @@ void InitSnakePosition() {
 }
 
 int main() {
-
-    // Level 0
+#pragma region WEEK 1
+    // //Level 0
     // Week1::LevelZero::Level0();
+    //
     //
     // // Level 1
     // Week1::LevelOne::Level1();
@@ -178,16 +196,32 @@ int main() {
     // // Level 3
     // Week1::LevelThree::RenderGrid(0, 0);
     // Week1::LevelThree::GetInput();
-
-    // Level 4
-    // Week1::LevelFour::RenderGrid(0,0);
+    //
+    // //Level 4
+    // Week1::LevelFour::RenderGrid(0, 0);
     // Week1::LevelFour::GetInput();
-
-    // Level 5
-    // Week1::LevelFive::GridGenerator(0,0);
+    //
+    // // Level 5
+    // Week1::LevelFive::GridGenerator(0, 0);
     // Week1::LevelFive::GetInput();
+    //
+    // // Level 6
+    // Week1::LevelSix::RunBasicSnake();
 
-    // Level 6
-    Week1::LevelSix::RunBasicSnake();
+#pragma endregion
+
+
+#pragma region WEEK 2
+
+    Week2::Level0::DefineStruct();
+    Week2::Level0::PassedStructPrint();
+    Week2::Level0::CompareVectors();
+
+    // For funsies
+    Week2::Level1::RunTemplateFunction();
+
+    #pragma endregion
+
+
     return 0;
 }

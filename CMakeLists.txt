@@ -12,6 +12,7 @@ set(PROJECT_HEADERS
         include/Exercises/Week1/Level0.h
         include/Exercises/Week1/Level1.h
         include/Exercises/Week1/Level2.h
+        include/Exercises/Week2/W2_Level1.h
 )
 set(PROJECT_SOURCES
         main.cpp
@@ -30,6 +31,10 @@ set(PROJECT_SOURCES
         include/Exercises/Week1/Level5.h
         src/Exercises/Week1/Level6.cpp
         include/Exercises/Week1/Level6.h
+        src/Exercises/Week2/W2Level0.cpp
+        include/Exercises/Week2/W2Level0.h
+        src/Exercises/Week2/W2_Level1.cpp
+        include/Exercises/Week2/W2_Level1.h
 )
 
 # Build executable
