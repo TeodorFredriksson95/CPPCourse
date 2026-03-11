@@ -10,6 +10,13 @@ namespace Week2::Level1 {
         return x > y ? x : y;
     }
 
+    // Struct class template
+    template <typename T>
+    struct Pair {
+        T first{};
+        T second{};
+    };
+
     void RunTemplateFunction();
 }
 
