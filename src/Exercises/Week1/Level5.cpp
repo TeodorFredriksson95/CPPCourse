@@ -63,7 +63,7 @@ namespace Week1::LevelFive {
 
         const int playerIndex = playerPositionY * WIDTH + playerPositionX; // Initialized to: 5 * 50 + 25 = 275.
         // The vector array `cells`is initialized with a size of 50*10 = 500.
-        // Index 275 brings the player position to row 5, 25 columns in. If confused as to why the calc doesnt
+        // Index 275 brings the player position to row 5, 25 columns in. If confused as to why the calc doesn't
         // equate to 250, which could be considered "half-way through", that's because index 250 would bring the player to
         // row 5, column 0, which would be half-way down, but at the start of the row.
 

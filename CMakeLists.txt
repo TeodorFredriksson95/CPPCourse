@@ -35,6 +35,12 @@ set(PROJECT_SOURCES
         include/Exercises/Week2/W2Level0.h
         src/Exercises/Week2/W2_Level1.cpp
         include/Exercises/Week2/W2_Level1.h
+        src/Exercises/Week2/W2_Level2.cpp
+        include/Exercises/Week2/W2_Level2.h
+        src/Exercises/Week2/W2_References_Level0.cpp
+        include/Exercises/Week2/W2_References_Level0.h
+        src/Exercises/Week2/W2_References_Level1.cpp
+        include/Exercises/Week2/W2_References_Level1.h
 )
 
 # Build executable

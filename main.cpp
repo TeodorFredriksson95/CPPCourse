@@ -1,4 +1,3 @@
-
 #include "Exercises/Week1/Level1.h"
 #include "Exercises/Week1/Level2.h"
 #include "Exercises/Week1/Level3.h"
@@ -15,8 +14,11 @@
 #include <conio.h>
 #include <windows.h>
 #include <algorithm>
+#include <vector>
 
 #include "Exercises/Week2/W2_Level1.h"
+#include "Exercises/Week2/W2_References_Level0.h"
+#include "Exercises/Week2/W2_References_Level1.h"
 
 
 using namespace std;
@@ -213,14 +215,38 @@ int main() {
 
 #pragma region WEEK 2
 
-    Week2::Level0::DefineStruct();
-    Week2::Level0::PassedStructPrint();
-    Week2::Level0::CompareVectors();
+#pragma region Structs and Classes
+    // // Level 0
+    // Week2::Level0::DefineStruct();
+    // Week2::Level0::PassedStructPrint();
+    // Week2::Level0::CompareVectors();
 
-    // For funsies
-    Week2::Level1::RunTemplateFunction();
+    // Level 1
+    // See folder `Week2/W2_Level1.cpp` for implementation
 
-    #pragma endregion
+    // Level 2
+    // See folder `Week2/W2_Level2.cpp` for implementation
+#pragma endregion
+
+#pragma region For Funsies
+    // Week2::Level1::RunTemplateFunction();
+#pragma endregion
+
+#pragma region References
+    // Level 0
+    // Week2::References_Level0::ChangeAndPrintReference();
+    // int a {5};
+    // int b {1};
+    // Week2::References_Level0::Swap(a, b);
+    // Week2::References_Level0::MoveRight(); // As per exercise requested param as been omitted until I learn class forwarding.
+    //                                         // `MoveRight()´ acts as a wrapped for the desired method signature until the above is resolved.
+    //
+    // // Level 1
+    // vector<int> veryLargeArray(100000);
+    // Week2::References_Level1::PrintVec(veryLargeArray);
+#pragma endregion
+
+#pragma endregion
 
 
     return 0;
