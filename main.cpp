@@ -17,6 +17,7 @@
 #include <vector>
 
 #include "Exercises/Week2/W2_Level1.h"
+#include "Exercises/Week2/W2_Pointers_Level0.h"
 #include "Exercises/Week2/W2_References_Level0.h"
 #include "Exercises/Week2/W2_References_Level1.h"
 
@@ -246,6 +247,9 @@ int main() {
     // Week2::References_Level1::PrintVec(veryLargeArray);
 #pragma endregion
 
+#pragma region Pointers
+Week2::Pointers_Level0::PrintPointer();
+#pragma endregion
 #pragma endregion
 
 
