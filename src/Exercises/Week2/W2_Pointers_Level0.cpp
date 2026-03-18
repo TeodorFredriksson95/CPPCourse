@@ -21,7 +21,7 @@ namespace Week2::Pointers_Level0 {
             cout << "Using null check before dereferencing pointer. Value of dereffed pointer: " << *p << endl;
         }
 
-        p = nullptr;
-        cout << "This is a nullptr: " << *p << endl;
+        // p = nullptr;
+        // cout << "This is a nullptr: " << *p << endl;
     }
 }

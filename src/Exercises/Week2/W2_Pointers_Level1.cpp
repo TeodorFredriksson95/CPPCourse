@@ -15,11 +15,11 @@ namespace Week2::Pointers_Level1 {
         }
 
         int sign = 1;
-        size_t i = 0;
+        size_t index = 0; // Index based on sign value. ´size_t` because ´.size()´ returns a `size_t` value.
 
         if (s[0] == '-') {
             sign = -1;
-            i = 1;
+            index = 1;
         }
 
 
@@ -28,8 +28,8 @@ namespace Week2::Pointers_Level1 {
         }
 
         int result = 0;
-        for (; i < s.size(); ++i) {
-            if (s[i] < '0' || s[i] > '9') { // Comparing ASCII values. For example, the character '/'
+        for (; index < s.size(); ++index) {
+            if (s[index] < '0' || s[index] > '9') { // Comparing ASCII values. For example, the character '/'
                                             // has the ASCII value 47, while the character '0' has the ASCII value 48.
                                             // For example the value `12/43` is not a valid int value, as noted by the '/' character.
                                             // This is what we check for in code, by comparing ASCII values.
@@ -37,7 +37,7 @@ namespace Week2::Pointers_Level1 {
                 return false;
             }
 
-            int digit = s[i] - '0'; // ASCII math. For example, let's say that the current s[i] character is '1'.
+            int digit = s[index] - '0'; // ASCII math. For example, let's say that the current s[i] character is '1'.
                                     // The actual value that would be assigned to the int `digit` would be: `49-48` which equals: 1.
 
             // Check overflow

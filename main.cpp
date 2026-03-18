@@ -16,8 +16,10 @@
 #include <algorithm>
 #include <vector>
 
+#include "Exercises/Week2/W2_FileIO_Level0.h"
 #include "Exercises/Week2/W2_Level1.h"
 #include "Exercises/Week2/W2_Pointers_Level0.h"
+#include "Exercises/Week2/W2_Pointers_Level2.h"
 #include "Exercises/Week2/W2_References_Level0.h"
 #include "Exercises/Week2/W2_References_Level1.h"
 
@@ -248,7 +250,13 @@ int main() {
 #pragma endregion
 
 #pragma region Pointers
-Week2::Pointers_Level0::PrintPointer();
+    // Week2::Pointers_Level0::PrintPointer();
+    // Week2::Pointers_Level2::DynamicIntMemory();
+#pragma endregion
+
+#pragma region FileIO
+    Week2::FileIO_Level0::WriteSingleScoreIO(52);
+    Week2::FileIO_Level0::AppendScoreToFile(33);
 #pragma endregion
 #pragma endregion
 
