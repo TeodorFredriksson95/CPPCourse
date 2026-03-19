@@ -1,3 +1,12 @@
+
+
+#include <iostream>
+#include <list>
+#include <conio.h>
+#include <windows.h>
+#include <algorithm>
+#include <vector>
+
 #include "Exercises/Week1/Level1.h"
 #include "Exercises/Week1/Level2.h"
 #include "Exercises/Week1/Level3.h"
@@ -9,20 +18,14 @@
 #include "Exercises/Week2/W2Level0.h"
 
 
-#include <iostream>
-#include <list>
-#include <conio.h>
-#include <windows.h>
-#include <algorithm>
-#include <vector>
-
 #include "Exercises/Week2/W2_FileIO_Level0.h"
+#include "Exercises/Week2/W2_FileIO_Level1.h"
+#include "Exercises/Week2/W2_FileIO_Level2.h"
 #include "Exercises/Week2/W2_Level1.h"
 #include "Exercises/Week2/W2_Pointers_Level0.h"
 #include "Exercises/Week2/W2_Pointers_Level2.h"
 #include "Exercises/Week2/W2_References_Level0.h"
 #include "Exercises/Week2/W2_References_Level1.h"
-
 
 using namespace std;
 
@@ -255,9 +258,14 @@ int main() {
 #pragma endregion
 
 #pragma region FileIO
-    Week2::FileIO_Level0::WriteSingleScoreIO(52);
-    Week2::FileIO_Level0::AppendScoreToFile(33);
+    // Week2::FileIO_Level0::WriteSingleScoreIO(52);
+    // Week2::FileIO_Level0::AppendScoreToFile(33);
+    //
+    // Week2::FileIO_Level1::ReadAllScores();
+    // Week2::FileIO_Level1::SortAndPrintTopScores();
+    Week2::FileIO_Level2::CSVSaveFile("Teo", 67);
 #pragma endregion
+
 #pragma endregion
 
 
