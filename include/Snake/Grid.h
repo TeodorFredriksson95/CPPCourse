@@ -2,19 +2,29 @@
 #define CPPCOURSE_GRID_H
 
 namespace Snake {
+    struct Vec2;
+
     class Grid {
     public:
-        Grid(int width, int height);
-        static int constexpr WIDTH = 50;
-        static int constexpr HEIGHT = 10;
 
-        int playerPositionX = WIDTH / 2;
-        int playerPositionY = HEIGHT / 2;
+        Grid(const int width, const int height);
+
+        bool InBounds(Vec2 pos) const;
 
         void GenerateGrid(int const moveX, int const moveY);
 
+        int GetWidth() const {return m_width;}
+        int GetHeight() const {return m_height;}
 
+        int GetPlayerPosX() const {return m_playerPositionX / 2;}
+        int GetPlayerPosY() const {return m_playerPositionY / 2;}
 
+    private:
+        const int m_width;
+        const int m_height;
+
+        const int m_playerPositionX;
+        const int m_playerPositionY;
     };
 }
 

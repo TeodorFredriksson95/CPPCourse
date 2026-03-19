@@ -13,6 +13,8 @@ set(PROJECT_HEADERS
         include/Exercises/Week1/Level1.h
         include/Exercises/Week1/Level2.h
         include/Exercises/Week2/W2_Level1.h
+        src/Snake/TestFile.cpp
+        include/Snake/TestFile.h
 )
 set(PROJECT_SOURCES
         main.cpp
@@ -61,6 +63,8 @@ set(PROJECT_SOURCES
         include/Snake/Grid.h
         src/Snake/Game.cpp
         include/Snake/Game.h
+        src/Snake/TestFile.cpp
+        include/Snake/TestFile.h
 )
 
 # Build executable

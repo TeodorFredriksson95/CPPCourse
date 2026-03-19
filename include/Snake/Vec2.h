@@ -4,9 +4,9 @@
 #define CPPCOURSE_VEC2_H
 
 namespace Snake {
-    class Vec2 {
-    public:
-
+    struct Vec2 {
+        public:
+        int x, y;
     };
 }
 
