@@ -9,63 +9,67 @@
 using namespace std;
 
 namespace Snake {
-    Grid::Grid(const int width, const int height) : m_width(width),
-                                                    m_height(height),
-                                                    m_playerPositionX(width / 2),
-                                                    m_playerPositionY(height / 2) {
+    Grid::Grid(const int width, const int height, char emptyChar) : m_width(width),
+                                                                      m_height(height),
+                                                                      m_empty(emptyChar),
+                                                                      m_playerPositionX(width / 2),
+                                                                      m_playerPositionY(height / 2) {
+        if (width <= 0) m_width = 50;
+        if (height <= 0) m_height = 10;
+
+        m_cells.assign(static_cast<size_t>(m_width * m_height), m_empty);
     }
 }
 
 
-bool Snake::Grid::InBounds(Vec2 pos) const {
-
-    if (playerPositionX <= 0) playerPositionX = Grid::WIDTH - 2;
-    if (playerPositionX >= Grid::WIDTH - 1) playerPositionX = 1;
-
-    if (playerPositionY <= 0) playerPositionY = Grid::HEIGHT - 2;
-    if (playerPositionY >= Grid::HEIGHT - 1) playerPositionY = 1;
+bool Snake::Grid::InBounds(const Vec2 pos) const {
+    if (pos.x <= 0
+        || pos.x >= m_width - 1
+        || pos.y <= 0
+        || pos.y >= m_height) {
+        return false;
+    }
+    return true;
 }
 
-void GridGenerator(int const moveX, int const moveY)
-{
-    //TODO: Add randomly placed obstacles.
+int Snake::Grid::ToIndex(const Vec2 pos) const {
+    return pos.y * m_width + pos.x;
+}
 
-    // USE THIS WITH CAUTION - `system("cls")`makes a system call. If someone were to place a "cls.bat" file on your disk
-    // then that program might be run by the below system call. That file in itself could be any kind of virus.
-    // Highly unlikely, but on a more public computer, this function call should be used with great intent and understanding
-    // of potential implications.
+void Snake::Grid::Clear() {
+    fill(m_cells.begin(), m_cells.end(), m_empty);
+}
 
-    // In this case, this program is a prep for a homework assignment. Whoever run this program does so at their own risk.
-    system("cls");
+void Snake::Grid::SetCell(Vec2 pos, char character) {
+    if (!InBounds(pos)) return;
+    const size_t index = static_cast<size_t>(ToIndex(pos)); // Prefer to cast to size_t as opposed to preserving
+                                                            // the returned int value, since vector[] expects a size_t init value.
+                                                            // Also, size_t is unsigned, which makes more sense as opposed to potentially
+                                                            // initializing the vector with a negative value, which does NOT make sense.
+    m_cells[index] = character;
+}
 
-    // Create space from top
-    cout << endl;
-    cout << endl;
-    cout << endl;
+char Snake::Grid::GetCell(Vec2 pos) const {
+    if (!InBounds(pos)) return m_empty;
+    const size_t index = static_cast<size_t>(ToIndex(pos));
+    return m_cells[index];
+}
 
-    playerPositionX += moveX;
-    playerPositionY += moveY;
+string Snake::Grid::Render() const {
+    string s;
 
-
-
-    vector<char> cells(Grid::WIDTH * Grid::HEIGHT, '.');
-
-    const int playerIndex = playerPositionY * Grid::WIDTH + playerPositionX; // Initialized to: 5 * 50 + 25 = 275.
-    // The vector array `cells`is initialized with a size of 50*10 = 500.
-    // Index 275 brings the player position to row 5, 25 columns in. If confused as to why the calc doesn't
-    // equate to 250, which could be considered "half-way through", that's because index 250 would bring the player to
-    // row 5, column 0, which would be half-way down, but at the start of the row.
-
-    cells[playerIndex] = '@';
-
-    for (int y = 0; y < Grid::HEIGHT; ++y) {
-        for (int x = 0; x < Grid::WIDTH; ++x) {
-            const int index = y * Grid::WIDTH + x;
-
-            if (x == 0 || x == Grid::WIDTH - 1) cout << "#";
-            else if (y == 0 || y == Grid::HEIGHT - 1) cout << "#";
-            else cout << cells[index];
+    // Reserve capacity for the string
+    s.reserve(static_cast<size_t>(m_width * 2 +1) * m_height + 64); // This formula has been provided to me by CJ.
+    // Need to investigate the use case of the magic numbers
+    // They might not fit my end intention.
+    s += '\n';
+    for (int y = 0; y < m_height; ++y) {
+        for (int x = 0; x < m_width; ++x) {
+            const char c = m_cells[static_cast<size_t>(y * m_width + x)]; // return the current character value at the given index.
+            s += c; // append the returned character to the string
+            s += ' '; // append empty char to string
         }
-        cout << endl;
+        s += '\n';
     }
+    return s;
 }

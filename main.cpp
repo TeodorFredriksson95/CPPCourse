@@ -29,18 +29,14 @@
 
 using namespace std;
 
-enum MyEnum {
-    One, Two, Three, Four, Five, Six, Seven, Eight, Nine
-};
-
 class Snake {
 public:
     enum Direction {
         EAST = 1, NORTH = 2, WEST = 3, SOUTH = 4
     };
 
-    int maxWidth;
-    int maxHeight;
+    int maxWidth{};
+    int maxHeight{};
     int isAlive;
 
     Direction direction;
